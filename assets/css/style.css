@@ -194,7 +194,7 @@ transform: translateY(-35px);
 .bola{
   width: 70px;
   height: 70px;
-  background: green;
+  background: var(--skin-color);
   border-radius:50%;
   position:absolute;
   top:-50%;
