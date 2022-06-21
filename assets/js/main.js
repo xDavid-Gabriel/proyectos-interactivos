@@ -140,7 +140,7 @@ function navHighlighter() {
     const sectionHeight = current.offsetHeight;
     const sectionTop = current.offsetTop - 50,
     sectionId = current.getAttribute("id")
-    //  console.log(sectionHeight);
+    console.log(sectionId);
 
     //(Ingles)
     /* - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
@@ -151,12 +151,18 @@ function navHighlighter() {
     - Para saber qué enlace necesita una clase activa, usamos la variable sectionId que obtenemos mientras recorremos las secciones como un selector*/
     
    if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-     document.querySelector(".nav__menu a[href*=" + sectionId + "]").classList.add("active-link")
+     document.querySelector(".navigation_container li[atributo*=" + sectionId + "]").classList.add("active")
    }else{
-    document.querySelector(".nav__menu a[href*=" + sectionId + "]").classList.remove("active-link")
+    document.querySelector(".navigation_container li[atributo*=" + sectionId + "]").classList.remove("active")
    }
   });
 }
+// Que se esconda los temas de colores al hacer scroll
+window.addEventListener("scroll", ()=>{
+  if(document.querySelector(".style-switcher").classList.contains("abrir")){
+      document.querySelector(".style-switcher").classList.remove("abrir")
+  }
+})
 
 // Toggle style switcher
 const styleSwitcherToggle = document.querySelector(".style-switcher-toggler")
