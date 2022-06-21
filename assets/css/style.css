@@ -475,7 +475,8 @@ z-index:2;
   margin: 1rem 0;
   display: flex;
   justify-content: center;
-  column-gap: .75rem
+  column-gap: .75rem;
+  flex-wrap: wrap;
 }
 .work__item{
   cursor: pointer;
